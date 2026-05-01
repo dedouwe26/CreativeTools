@@ -1,26 +1,18 @@
 package oxded.creativetools.blockentities;
 
-import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 import dev.ryanhcode.sable.physics.floating_block.FloatingBlockMaterial;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 import oxded.creativetools.CreativeTools;
 import oxded.creativetools.FloatingMaterialSupplier;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class CreativeDragBlockEntity extends FloatingBlockEntity implements FloatingMaterialSupplier {
 	public ScrollValueBehaviour transition;

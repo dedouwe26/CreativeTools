@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import oxded.creativetools.CreativeTools;
 import oxded.creativetools.FloatingMaterialSupplier;
 
 public abstract class FloatingBlockEntity extends SmartBlockEntity implements FloatingMaterialSupplier {
@@ -23,7 +22,6 @@ public abstract class FloatingBlockEntity extends SmartBlockEntity implements Fl
 	}
 	public void removeFloatingBlock() {
 		if (!isLoaded() || level == null) return;
-		CreativeTools.LOGGER.info("remove {}", previous.getMaterial().liftStrength());
 		FloatingMaterialSupplier.remove(level, getBlockPos(), previous);
 		previous = null;
 	}
@@ -55,20 +53,16 @@ public abstract class FloatingBlockEntity extends SmartBlockEntity implements Fl
 			}
 		};
 
-		CreativeTools.LOGGER.info("add {}", getMaterial().liftStrength());
 		FloatingMaterialSupplier.add(level, getBlockPos(), this);
 	}
 	public void reloadFloatingBlock() {
-		CreativeTools.LOGGER.info("reload {}", getMaterial().liftStrength());
 		removeFloatingBlock();
 		addFloatingBlock();
-		CreativeTools.LOGGER.info("reload is loaded {}:", isLoaded());
 	}
 
 	@Override
 	public void setLevel(@NotNull Level level) {
 		super.setLevel(level);
-		CreativeTools.LOGGER.info("set level {}", getMaterial().liftStrength());
 		addFloatingBlock();
 	}
 }

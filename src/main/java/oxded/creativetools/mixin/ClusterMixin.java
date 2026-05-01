@@ -15,11 +15,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import oxded.creativetools.CreativeTools;
 import oxded.creativetools.FloatingMaterialSupplier;
 import oxded.creativetools.mixinterfaces.FloatingBlockAdder;
-
-import java.util.Map;
 
 @Mixin(FloatingClusterContainer.class)
 public class ClusterMixin implements FloatingBlockAdder {

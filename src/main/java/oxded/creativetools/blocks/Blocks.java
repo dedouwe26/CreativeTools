@@ -1,16 +1,11 @@
 package oxded.creativetools.blocks;
 
-import com.simibubi.create.foundation.item.ItemDescription;
-import com.simibubi.create.foundation.item.KineticStats;
-import com.simibubi.create.foundation.item.TooltipModifier;
 import dev.eriksonn.aeronautics.Aeronautics;
 import dev.simulated_team.simulated.Simulated;
 import dev.simulated_team.simulated.registrate.SimulatedRegistrate;
-import net.createmod.catnip.lang.FontHelper;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;

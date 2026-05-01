@@ -12,7 +12,7 @@ version="${mod_version}" #mandatory
 
 displayName="${mod_name}" #mandatory
 displayURL="https://github.com/dedouwe26/CreativeTools" #optional
-logoFile="examplemod.png" #optional
+logoFile="${mod_id}.png" #optional
 
 authors="0xDED"
 
@@ -24,8 +24,8 @@ This includes the Levitite block and the steam vent.
 [[mixins]]
 config="${mod_id}.mixins.json"
 
-[[accessTransformers]]
-file="META-INF/accesstransformer.cfg"
+#[[accessTransformers]]
+#file="META-INF/accesstransformer.cfg"
 
 [[dependencies.${mod_id}]]
     modId="neoforge" #mandatory

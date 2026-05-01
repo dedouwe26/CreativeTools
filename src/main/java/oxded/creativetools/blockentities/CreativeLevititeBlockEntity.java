@@ -1,6 +1,5 @@
 package oxded.creativetools.blockentities;
 
-import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
@@ -8,7 +7,6 @@ import dev.ryanhcode.sable.physics.floating_block.FloatingBlockMaterial;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -62,7 +60,7 @@ public class CreativeLevititeBlockEntity extends FloatingBlockEntity implements 
 
 		public float getScale() {
 			return super.getScale();
-		};
+		}
 
 		@Override
 		protected boolean isSideActive(BlockState state, Direction direction) {
