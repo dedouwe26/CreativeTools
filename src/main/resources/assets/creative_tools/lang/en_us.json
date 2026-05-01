@@ -1,0 +1,11 @@
+{
+  "creative_tools.creative_levitite.config_title": "Configure lift strength",
+  "block.creative_tools.creative_levitite": "Creative Levitite",
+  "block.creative_tools.creative_levitite.tooltip.summary": "_Levitates_ your contraptions with a _configurable_ variant of the _Levitite_ block.",
+
+  "creative_tools.creative_drag_block.horizontal": "Configure horizontal drag",
+  "creative_tools.creative_drag_block.vertical": "Configure vertical drag",
+  "creative_tools.creative_drag_block.transition": "Configure deceleration speed",
+  "block.creative_tools.creative_drag_block": "Creative Drag Block",
+  "block.creative_tools.creative_drag_block.tooltip.summary": "Use this block to _customize_ the _drag_ on your contraptions."
+}

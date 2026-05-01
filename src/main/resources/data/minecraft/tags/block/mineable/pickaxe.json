@@ -1,5 +1,6 @@
 {
   "values": [
-    "creative_levitite:creative_levitite"
+    "creative_tools:creative_levitite",
+    "creative_tools:creative_drag_block"
   ]
 }

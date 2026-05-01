@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "creative_tools:block/creative_drag_block"
+    }
+  }
+}
