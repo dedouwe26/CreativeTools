@@ -48,6 +48,21 @@ public final class Blocks {
 			new Item.Properties().rarity(Rarity.EPIC)
 	);
 
+	public static final DeferredBlock<CreativeBalloonBlock> CREATIVE_BALLOON_BLOCK = BLOCKS.registerBlock(
+			"creative_balloon",
+			CreativeBalloonBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_PURPLE).forceSolidOn()
+					.strength(-1.0F, 3600000.0F)
+					.noLootTable()
+					.isValidSpawn(net.minecraft.world.level.block.Blocks::never)
+	);
+	public static final DeferredItem<BlockItem> CREATIVE_BALLOON_BLOCK_ITEM = ITEMS.registerItem(
+			"creative_balloon",
+			(p) -> new BlockItem(CREATIVE_BALLOON_BLOCK.get(), p),
+			new Item.Properties().rarity(Rarity.EPIC)
+	);
+
 
 	public static void init(IEventBus modEventBus) {
 		BLOCKS.register(modEventBus);
@@ -59,5 +74,7 @@ public final class Blocks {
 		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_LEVITITE_BLOCK_ITEM.getId(), Aeronautics.path("aeronautics"));
 		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_DRAG_BLOCK_ITEM::get);
 		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_DRAG_BLOCK_ITEM.getId(), Simulated.path("simulated"));
+		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_BALLOON_BLOCK_ITEM::get);
+		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_BALLOON_BLOCK_ITEM.getId(), Aeronautics.path("aeronautics"));
 	}
 }

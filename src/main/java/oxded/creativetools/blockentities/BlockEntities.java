@@ -24,6 +24,11 @@ public class BlockEntities {
 			() -> BlockEntityType.Builder.of(CreativeDragBlockEntity::new, Blocks.CREATIVE_DRAG_BLOCK.get()).build(null)
 	);
 
+	public static final Supplier<BlockEntityType<CreativeBalloonBlockEntity>> CREATIVE_BALLOON_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register(
+			"creative_balloon",
+			() -> BlockEntityType.Builder.of(CreativeBalloonBlockEntity::new, Blocks.CREATIVE_BALLOON_BLOCK.get()).build(null)
+	);
+
 	public static void init(IEventBus bus) {
 		BLOCK_ENTITY_TYPES.register(bus);
 	}

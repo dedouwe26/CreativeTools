@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "creative_tools:block/creative_drag_block"
+    },
+    "facing=east": {
+      "model": "creative_tools:block/creative_drag_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "creative_tools:block/creative_drag_block"
+    },
+    "facing=west": {
+      "model": "creative_tools:block/creative_drag_block",
+      "y": 90
     }
   }
 }

@@ -1,11 +1,17 @@
 {
   "creative_tools.creative_levitite.config_title": "Configure lift strength",
+  "creative_tools.creative_levitite.value": "Lift",
   "block.creative_tools.creative_levitite": "Creative Levitite",
   "block.creative_tools.creative_levitite.tooltip.summary": "_Levitates_ your contraptions with a _configurable_ variant of the _Levitite_ block.",
 
   "creative_tools.creative_drag_block.horizontal": "Configure horizontal drag",
   "creative_tools.creative_drag_block.vertical": "Configure vertical drag",
   "creative_tools.creative_drag_block.transition": "Configure deceleration speed",
+  "creative_tools.creative_drag_block.value": "Speed",
   "block.creative_tools.creative_drag_block": "Creative Drag Block",
-  "block.creative_tools.creative_drag_block.tooltip.summary": "Use this block to _customize_ the _drag_ on your contraptions."
+  "block.creative_tools.creative_drag_block.tooltip.summary": "Use this block to _customize_ the _drag_ on your contraptions.",
+
+  "creative_tools.creative_balloon.config_title": "Configure height",
+  "creative_tools.creative_balloon.value": "Height",
+  "block.creative_tools.creative_balloon": "Creative Balloon"
 }
