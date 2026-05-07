@@ -22,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.joml.Vector3d;
+import org.joml.Vector3dc;
 import oxded.creativetools.CreativeTools;
 
 import java.util.List;
@@ -48,36 +49,42 @@ public class CreativeBalloonBlockEntity extends SmartBlockEntity implements Bloc
 		height.setValue(64);
 	}
 
-	private final Vector3d blockCenter = JOMLConversion.atCenterOf(getBlockPos());
-	private final Vector3d gravity = new Vector3d();
-	private final Vector3d force = new Vector3d();
-	private final Vector3d worldBlockCenter = new Vector3d();
-	private double dy = 0;
-	private double currentHeight = 0;
+	private final Vector3dc blockCenter = JOMLConversion.atCenterOf(getBlockPos());
 
 	@Override
 	public void sable$physicsTick(ServerSubLevel subLevel, RigidBodyHandle handle, double timeStep) {
 		QueuedForceGroup group = subLevel.getOrCreateQueuedForceGroup(ForceGroups.BALLOON_LIFT.get());
 		Pose3d pose = subLevel.logicalPose();
 
-		worldBlockCenter.set(blockCenter);
+		final Vector3d worldBlockCenter = new Vector3d(blockCenter);
 		pose.transformPosition(worldBlockCenter);
 
 		int wantedHeight = height.getValue();
-		currentHeight = worldBlockCenter.y;
+		double currentHeight = worldBlockCenter.y;
 
-		dy = currentHeight - wantedHeight;
+		double dy = currentHeight - wantedHeight;
 		CreativeTools.LOGGER.info("dy {}", dy);
 		dy = Mth.clamp(dy, -10, 10) / -10;
 		CreativeTools.LOGGER.info("gradient {}", dy);
 
-		force.set(dy*timeStep);
+		Vector3d force = new Vector3d(dy*timeStep*0.5+1);
+		Vector3d torque = new Vector3d();
+		Vector3d totalAcceleration = new Vector3d();
 
-		gravity.set(DimensionPhysicsData.getGravity(level));
-		pose.transformNormalInverse(gravity);
-		force.add(gravity.negate());
-		CreativeTools.LOGGER.info("gravity {}: {}", gravity, gravity.length());
+		assert level != null;
+		Vector3d gravity = new Vector3d();
+		DimensionPhysicsData.getGravity(level, pose.position(), gravity);
+		torque.cross(blockCenter, totalAcceleration);
+		totalAcceleration.fma(1 / subLevel.getMassTracker().getMass(), force);
+		double scaleFactor = -gravity.lengthSquared() / gravity.dot(totalAcceleration);
 
-		group.recordPointForce(blockCenter, force);
+		if (scaleFactor > 1) {
+			scaleFactor = 1;
+		}
+		force.mul(scaleFactor);
+		pose.orientation().transformInverse(gravity);
+//		force.mul(gravity.negate());
+
+		group.applyAndRecordPointForce(blockCenter, force);
 	}
 }
