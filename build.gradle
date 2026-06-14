@@ -51,6 +51,12 @@ repositories {
         url = 'https://maven.blamejared.com/'
     }
     maven { url = "https://mvn.devos.one/snapshots" }
+
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+
     flatDir {
         dir("libs")
     }
