@@ -154,6 +154,7 @@ dependencies {
     implementation "dev.ryanhcode.offroad:offroad-neoforge-${minecraft_version}:${simulated_version}"
     implementation "dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}"
     implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html

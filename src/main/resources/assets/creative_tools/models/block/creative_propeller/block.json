@@ -1,0 +1,7 @@
+{
+  "parent": "aeronautics:block/andesite_propeller/block",
+  "textures": {
+    "particle": "create:block/creative_casing",
+    "5": "creative_tools:block/creative_propeller"
+  }
+}

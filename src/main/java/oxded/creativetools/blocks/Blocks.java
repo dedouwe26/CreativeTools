@@ -18,7 +18,7 @@ public final class Blocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CreativeTools.MODID);
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreativeTools.MODID);
 
-	public static final DeferredBlock<CreativeLevititeBlock> CREATIVE_LEVITITE_BLOCK = BLOCKS.registerBlock(
+	public static final DeferredBlock<CreativeLevititeBlock> CREATIVE_LEVITITE = BLOCKS.registerBlock(
 			"creative_levitite",
 			CreativeLevititeBlock::new,
 			BlockBehaviour.Properties.of()
@@ -27,9 +27,9 @@ public final class Blocks {
 					.noLootTable()
 					.isValidSpawn(net.minecraft.world.level.block.Blocks::never)
 	);
-	public static final DeferredItem<BlockItem> CREATIVE_LEVITITE_BLOCK_ITEM = ITEMS.registerItem(
+	public static final DeferredItem<BlockItem> CREATIVE_LEVITITE_ITEM = ITEMS.registerItem(
 			"creative_levitite",
-			(p) -> new BlockItem(CREATIVE_LEVITITE_BLOCK.get(), p),
+			(p) -> new BlockItem(CREATIVE_LEVITITE.get(), p),
 			new Item.Properties().rarity(Rarity.EPIC)
 	);
 
@@ -48,6 +48,21 @@ public final class Blocks {
 			new Item.Properties().rarity(Rarity.EPIC)
 	);
 
+	public static final DeferredBlock<CreativePropellerBlock> CREATIVE_PROPELLER = BLOCKS.registerBlock(
+			"creative_propeller",
+			CreativePropellerBlock::new,
+			BlockBehaviour.Properties.of()
+					.mapColor(MapColor.COLOR_PURPLE).forceSolidOn()
+					.strength(-1.0F, 3600000.0F)
+					.noLootTable()
+					.isValidSpawn(net.minecraft.world.level.block.Blocks::never)
+	);
+	public static final DeferredItem<BlockItem> CREATIVE_PROPELLER_ITEM = ITEMS.registerItem(
+			"creative_propeller",
+			(p) -> new BlockItem(CREATIVE_PROPELLER.get(), p),
+			new Item.Properties().rarity(Rarity.EPIC)
+	);
+
 
 	public static void init(IEventBus modEventBus) {
 		BLOCKS.register(modEventBus);
@@ -55,9 +70,11 @@ public final class Blocks {
 	}
 
 	public static void commonSetup() {
-		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_LEVITITE_BLOCK_ITEM::get);
-		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_LEVITITE_BLOCK_ITEM.getId(), Aeronautics.path("aeronautics"));
+		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_LEVITITE_ITEM::get);
+		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_LEVITITE_ITEM.getId(), Aeronautics.path("aeronautics"));
 		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_DRAG_BLOCK_ITEM::get);
 		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_DRAG_BLOCK_ITEM.getId(), Simulated.path("simulated"));
+		SimulatedRegistrate.TAB_ITEMS.add(CREATIVE_PROPELLER_ITEM::get);
+		SimulatedRegistrate.ITEM_TO_SECTION.put(CREATIVE_PROPELLER_ITEM.getId(), Aeronautics.path("aeronautics"));
 	}
 }

@@ -18,6 +18,6 @@ public class CreativeLevititeBlock extends Block implements IBE<CreativeLevitite
 
 	@Override
 	public BlockEntityType<? extends CreativeLevititeBlockEntity> getBlockEntityType() {
-		return BlockEntities.CREATIVE_LEVITITE_BLOCK_ENTITY.get();
+		return BlockEntities.CREATIVE_LEVITITE.get();
 	}
 }

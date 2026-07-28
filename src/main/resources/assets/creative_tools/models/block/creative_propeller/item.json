@@ -1,0 +1,6 @@
+{
+  "parent": "aeronautics:block/andesite_propeller/item",
+  "textures": {
+    "2": "creative_tools:block/creative_propeller"
+  }
+}

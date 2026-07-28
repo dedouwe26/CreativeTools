@@ -7,5 +7,7 @@
   "creative_tools.creative_drag_block.vertical": "Configure vertical drag",
   "creative_tools.creative_drag_block.transition": "Configure deceleration speed",
   "block.creative_tools.creative_drag_block": "Creative Drag Block",
-  "block.creative_tools.creative_drag_block.tooltip.summary": "Use this block to _customize_ the _drag_ on your contraptions."
+  "block.creative_tools.creative_drag_block.tooltip.summary": "Use this block to _customize_ the _drag_ on your contraptions.",
+
+  "block.creative_tools.creative_propeller": "Creative Propeller"
 }

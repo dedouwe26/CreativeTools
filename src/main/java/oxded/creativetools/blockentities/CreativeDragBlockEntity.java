@@ -18,7 +18,7 @@ public class CreativeDragBlockEntity extends FloatingBlockEntity implements Floa
 	public ScrollValueBehaviour transition;
 
 	public CreativeDragBlockEntity(BlockPos pos, BlockState state) {
-		super(BlockEntities.CREATIVE_DRAG_BLOCK_ENTITY.get(), pos, state);
+		super(BlockEntities.CREATIVE_DRAG_BLOCK.get(), pos, state);
 	}
 
 	@Override

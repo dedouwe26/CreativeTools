@@ -1,6 +1,8 @@
 package oxded.creativetools;
 
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -27,5 +29,15 @@ public class CreativeTools {
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
         Blocks.commonSetup();
+    }
+
+    @SubscribeEvent
+    public static void clientSetup(FMLClientSetupEvent event) {
+        BlockEntities.clientSetup();
+    }
+
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        BlockEntities.registerEntityRenderers(event);
     }
 }

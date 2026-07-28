@@ -35,6 +35,6 @@ public class CreativeDragBlock extends Block implements IBE<CreativeDragBlockEnt
 
 	@Override
 	public BlockEntityType<? extends CreativeDragBlockEntity> getBlockEntityType() {
-		return BlockEntities.CREATIVE_DRAG_BLOCK_ENTITY.get();
+		return BlockEntities.CREATIVE_DRAG_BLOCK.get();
 	}
 }
